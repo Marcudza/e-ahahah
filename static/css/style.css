@@ -1,0 +1,19 @@
+h4 {
+    padding-left: 20px;
+    color: grey;
+}
+
+.img:before {
+    margin-right: 14px;
+    background-image: url('../img/login.png');
+    background-size: contain;
+    display: inline-block;
+    height: 32px;
+    width: 98px;
+    content:"";
+
+}
+
+.label {
+    padding-top: 20px;
+}
