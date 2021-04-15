@@ -1,24 +1,27 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h4 class="img">Аварийный доступ</h4>
+<div class="login_image">
+    <img src="/static/img/logo.png">
+</div>
+<div class="form">
+    <h4>Авторизация</h4>
     <form action="" method="post" novalidate>
         <div>
-            {{ form.csrf_token }}
+            <input id="csrf_token" name="csrf_token" type="hidden"
+                   value="IjBiNmZkOWRkYzhlMmJkN2E4N2IzYTU5OGMwMTlmN2VlNTY0NWE2MzQi.YHXeTQ.0YdJGnD67Aa_jG1s6kJpu6RqKLY">
         </div>
-        {% for field in form if field.name != 'csrf_token' %}
-            <div>
-                {% if field.name != 'submit' %}
-                    <div class="label">{{ field.label() }}</div>
-                    {{ field() }}
-                {% else %}
-                    <div class="label">{{ field() }}</div>
-                {% endif %}
-                {% for error in field.errors %}
-                    <div class="error">{{ error }}</div>
-                {% endfor %}
-            </div>
-        {% endfor %}
+        <div class="login-forms">
+            <div class="label"><label for="username">Логин</label></div>
+            <input id="username" name="username" required type="text" value="">
+        </div>
+        <div class="login-forms">
+            <div class="label"><label for="password">Пароль</label></div>
+            <input id="password" name="password" required type="password" value="">
+        </div>
+        <div class="login-forms">
+            <div class="label"><input id="submit" name="submit" type="submit" value="Войти"></div>
+        </div>
     </form>
-
+</div>
 {% endblock %}

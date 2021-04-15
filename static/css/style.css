@@ -1,6 +1,5 @@
-h4 {
-    padding-left: 20px;
-    color: grey;
+body {
+    background: #343434
 }
 
 .img:before {
@@ -16,4 +15,23 @@ h4 {
 
 .label {
     padding-top: 20px;
+}
+
+.form {
+    text-align: center;
+    margin-top: 100px;
+    color: white
+}
+
+.login_image {
+    margin: 0 auto;
+    margin-top: 110px;
+    width: 800px;
+    height: 70px;
+}
+
+.login_image img {
+    text-align: center;
+    width: 800px;
+    height: 70px;
 }
