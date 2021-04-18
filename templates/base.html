@@ -11,6 +11,15 @@
     <title>{{title}}</title>
 </head>
 <body>
+{% if header != False %}
+    <div class="fixed-header">
+        <img src="/static/img/logo.png" width="250px" height="17px" />
+        <div class="profile-info">
+            <div class="balance">Balance: <span class="balance-amount">{{balance}}</span></div>
+            <a href="#" class="profile">My profile: {{name}}</a>
+        </div>
+    </div>
+{% endif %}
 <main role="main" class="container">
     {% block content %}{% endblock %}
 </main>

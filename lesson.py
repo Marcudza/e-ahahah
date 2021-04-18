@@ -16,7 +16,17 @@ class LoginForm(FlaskForm):
 @app.route('/login')
 def login():
     form = LoginForm()
-    return render_template('login.html', title='Авторизация', form=form)
+    return render_template('login.html', title='Authorization', form=form, header=False)
+
+
+@app.route('/registration')
+def reg():
+    return render_template('reg.html', title='Registration')
+
+
+@app.route('/main')
+def main_page():
+    return render_template('main_page.html', title='StaletDrop', balance=100, name='Garfield')
 
 
 if __name__ == '__main__':

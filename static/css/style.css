@@ -35,3 +35,61 @@ body {
     width: 800px;
     height: 70px;
 }
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.fixed-header, .fixed-footer {
+        width: 100%;
+        position: fixed;
+        background: #2b2b2b;
+        color: #fff;
+}
+
+.fixed-header {
+        top: 0;
+        height: 60px;
+        padding: 16px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+}
+
+.fixed-footer {
+        bottom: 0;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+}
+
+.balance {
+    display: flex;
+    align-items: center;
+}
+
+.balance-amount {
+    color: red;
+    font-weight: 600;
+    font-size: 18px;
+    padding-left: 6px;
+}
+
+.profile {
+    text-decoration: none;
+    color: pink;
+    transition: 0.3s;
+    padding: 4px;
+    margin-left: 12px;
+}
+
+.profile:hover {
+    color: red;
+    transition: 0.3s;
+    text-decoration: underline;
+    outline: 2px solid blue;
+    background-color: cyan;
+}
