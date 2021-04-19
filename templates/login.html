@@ -20,7 +20,11 @@
             <input id="password" name="password" required type="password" value="">
         </div>
         <div class="login-forms">
-            <div class="label"><input id="submit" name="submit" type="submit" value="Войти"></div>
+            {% if login == True %}
+                <div class="label"><input id="submit" name="submit" type="submit" value="Войти"></div>
+            {% else %}
+                <div class="label"><input id="submit" name="submit" type="submit" value="Регистрация"></div>
+            {% endif %}
         </div>
     </form>
 </div>
