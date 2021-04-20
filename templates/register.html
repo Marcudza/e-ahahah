@@ -6,12 +6,8 @@
 </div>
 
 <div class="form">
-    <h4>Авторизация</h4>
+    <h4>Регистрация</h4>
     <form action="" method="post" novalidate>
-        <div>
-            <input id="csrf_token" name="csrf_token" type="hidden"
-                   value="IjBiNmZkOWRkYzhlMmJkN2E4N2IzYTU5OGMwMTlmN2VlNTY0NWE2MzQi.YHXeTQ.0YdJGnD67Aa_jG1s6kJpu6RqKLY">
-        </div>
         <div class="login-forms">
             <div class="label"><label for="username">Логин</label></div>
             <input id="username" name="username" required type="text" value="">
@@ -22,13 +18,13 @@
         </div>
         {% if error == True %}
             <div class="error">
-                Error! Invalid pass or username.
+                Error! All inputs are required.
             </div>
         {% endif %}
         <div class="login-forms">
-                <div class="label"><input id="submit" name="submit" type="submit" value="Войти"></div>
+            <div class="label"><input id="sign" name="submit" type="submit" value="Регистрация"></div>
         </div>
-        <a href="/registration">Зарегистрироваться</a>
+        <a href="/">Войти</a>
     </form>
 </div>
 {% endblock %}

@@ -1,33 +1,40 @@
-from flask import Flask, render_template
-from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField
-from wtforms.validators import DataRequired
+from flask import Flask, render_template, request, redirect
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
 
-class LoginForm(FlaskForm):
-    username = StringField('Логин', validators=[DataRequired()])
-    password = PasswordField('Пароль', validators=[DataRequired()])
-    submit = SubmitField('Войти')
-
-
-@app.route('/login')
+@app.route('/', methods=['POST', 'GET'])
 def login():
-    form = LoginForm()
-    login = True
+    if request.method == 'GET':
+        return render_template('login.html', title='Authorization', header=False, error=False)
+    elif request.method == 'POST':
+        print(request.form['username'])
+        print(request.form['password'])
+        pass_db = '123'
+        # check password in db
+        error = request.form['password'] != pass_db
+        if error:
+            return render_template('login.html', title='Authorization', header=False, error=True)
+        return redirect('/main', code=302)
 
-    return render_template('login.html', title='Authorization', form=form, header=False, login=login)
 
-
-@app.route('/registration')
+@app.route('/registration', methods=['POST', 'GET'])
 def reg():
-    return render_template('reg.html', title='Registration')
+    if request.method == 'GET':
+        return render_template('register.html', title='Registration', header=False, error=False)
+    elif request.method == 'POST':
+        print(request.form['username'])
+        print(request.form['password'])
+        if not request.form['username'] or not request.form['password']:
+            return render_template('register.html', title='Registration', header=False, error=True)
+        # add user to db
+        return redirect('/main', code=302)
 
 
 @app.route('/main')
 def main_page():
+    # get username and balance from db
     return render_template('main_page.html', title='StaletDrop', balance=100, name='Garfield')
 
 

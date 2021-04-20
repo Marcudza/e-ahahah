@@ -1,3 +1,7 @@
+html, body, .container {
+    height: 100%
+}
+
 body {
     background: #343434
 }
@@ -37,7 +41,7 @@ body {
 }
 
 .container{
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     padding: 60px 0;
 }
@@ -121,7 +125,7 @@ body {
 
 .glow-on-hover:before {
     content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    background: #ffffff;
     position: absolute;
     top: -2px;
     left:-2px;
@@ -168,4 +172,25 @@ body {
 
 .glow-on-hover:hover {
     color: cyan;
+}
+
+
+.slot-link {
+    margin: auto 0;
+    cursor: pointer;
+    padding: 0;
+}
+
+.slot-link-image {
+    border-radius: 10px;
+}
+
+.slots {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.error {
+    color: red;
 }
