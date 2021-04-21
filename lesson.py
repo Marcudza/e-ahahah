@@ -38,5 +38,12 @@ def main_page():
     return render_template('main_page.html', title='StaletDrop', balance=100, name='Garfield')
 
 
+@app.route('/profile')
+def profile():
+    # get username, balance, password from db
+    return render_template('profile.html', title='My profile', balance=100, name='Garfield', password='123',
+                           disableProfileInfo=True, header=False)
+
+
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1', debug=True)

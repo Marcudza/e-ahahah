@@ -194,3 +194,16 @@ body {
 .error {
     color: red;
 }
+
+.profile-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: white;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+    margin: 60px auto;
+    background-color: #2b2b2b;
+    border-radius: 10px;
+}

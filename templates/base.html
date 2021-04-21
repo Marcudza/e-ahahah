@@ -13,18 +13,29 @@
 <body>
 {% if header != False %}
     <div class="fixed-header">
-        <img src="/static/img/logo.png" width="250px" height="17px" />
+        <a href="/main">
+            <img src="/static/img/logo.png" width="250px" height="17px" />
+        </a>
         <div class="profile-info">
             <div class="balance glow-on-hover">Balance: <span class="balance-amount">{{balance}}</span></div>
             <a href="/profile" class="glow-on-hover">My profile: {{name}}</a>
         </div>
+    </div>
+{% elif disableProfileInfo ==  True %}
+    <div class="fixed-header">
+        <a href="/main">
+            <img src="/static/img/logo.png" width="250px" height="17px" />
+        </a>
+        <a href='/main' class="glow-on-hover">Вернуться на главную</a>
     </div>
 {% endif %}
 <main role="main" class="container">
     {% block content %}{% endblock %}
 </main>
 <div class="fixed-footer">
-    <img src="/static/img/sd.png" class="footer-img" />
+    <a href="/main">
+        <img src="/static/img/sd.png" class="footer-img" />
+    </a>
     <div>© staletdrop 2021</div>
 </div>
 </body>
