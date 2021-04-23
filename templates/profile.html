@@ -2,8 +2,20 @@
 
 {% block content %}
 <div class="profile-main">
-    <div class="">login: {{name}}</div>
-    <div class="">Password: {{password}}</div>
-    <div class="">Balance: {{balance}}</div>
+    <div>login: {{name}}</div>
+    <div>Password: {{password}}</div>
+    <div class="balance-cont">Balance: {{balance}}
+        <form action="" method="post" novalidate  class="balance-form">
+            <div class="login-forms">
+                <div class="label"><label for="amount">Amount</label></div>
+                <input id="amount" name="amount" required type="text" value="">
+            </div>
+            <div class="label glow-on-hover"><input class="logout" id="refill" name="submit" type="submit" value="Refill"></div>
+        </form>
+    </div>
+    <form action="" method="post" novalidate >
+        <div class="label glow-on-hover"><input class="logout" id="logout" name="submit" type="submit" value="Log out"></div>
+    </form>
 </div>
+
 {% endblock %}

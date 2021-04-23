@@ -1,0 +1,171 @@
+:root {
+  --color-dark: #84dd63;
+  --color-light: #cbff4d;
+  --bg-main: #cbff4d;
+  --bg-secondary: #a4f9c8;
+}
+
+*,
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: consolas;
+}
+
+button {
+  border: 2px solid grey;
+  background: beige;
+  font-size: 1em;
+  padding: 0.3em;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.scene {
+  position: relative;
+  width: 100%;
+  min-width: 100px;
+  height: 100%;
+  min-height: 100px;
+  perspective: 100vh;
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.carousel__cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background: #f3f9d2;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.carousel__cell > img {
+  width: 42%;
+  margin: 0 auto;
+}
+
+#wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2em 4em;
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  min-height: 10vh;
+  justify-content: center;
+}
+
+#header > h1 {
+  margin-bottom:1em;
+  color: white;
+  text-shadow: 2px 2px #666;
+}
+
+#controls {
+  text-align: center;
+  padding: 0.5em 0 0.5em 0;
+}
+
+#controls > span {
+  display: inline-block;
+  line-height: 2;
+}
+
+
+#machine {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+#slot1,
+#slot2,
+#slot3 {
+  width: 100%;
+  overflow: hidden;
+  padding: 3em 0;
+}
+
+#slot2,
+#slot3 {
+  margin-left: 0.5em;
+}
+
+.is-animating {
+  animation: scroll 1s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(-360deg);
+  }
+}
+
+.scanlines:before,
+.scanlines:after {
+  display: block;
+  pointer-events: none;
+  content: "";
+  position: absolute;
+}
+
+.scanlines:before {
+  width: 100%;
+  height: 2px;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0.55;
+  animation: scanline 6s linear infinite;
+}
+
+.scanlines:after {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 998;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0, 0, 0, 0.2) 51%
+  );
+  background-size: 100% 2px;
+  animation: scanlines 1s steps(60) infinite;
+}
+
+/* Unique scanline */
+@keyframes scanline {
+  0% {
+    transform: translate3d(0, 200000%, 0);
+  }
+}
+@keyframes scanlines {
+  0% {
+    background-position: 0 50%;
+  }
+}
+
+/* Properties */
+.inner-shadow {
+  -moz-box-shadow: inset 0 0 10px #000;
+  -webkit-box-shadow: inset 0 0 10px #000;
+  box-shadow: inset 0 0 10px #000;
+}

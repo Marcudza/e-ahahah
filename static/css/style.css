@@ -207,3 +207,65 @@ body {
     background-color: #2b2b2b;
     border-radius: 10px;
 }
+
+.main-slot {
+    margin: 60px auto 0;
+    border-radius: 10px;
+    width: 800px;
+}
+
+.slot-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.slot-button {
+    border: 4mm ridge rgba(170, 50, 220, .6);
+    background-color: #85144b;
+}
+
+.slot-balance-amount {
+    color: red;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 6px;
+}
+
+.logout {
+    background-color: #2b2b2b;
+    color: white;
+    border: none;
+}
+
+.balance-cont {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.balance-form {
+    padding-left: 12px;
+}
+
+.button_slide {
+  color: #FFF;
+  border: 2px solid rgb(216, 2, 134);
+  border-radius: 0px;
+  padding: 18px 36px;
+  display: inline-block;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 0 #D80286;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+}
+
+.slide_left:hover {
+  box-shadow: inset 0 0 0 50px #D80286;
+}
